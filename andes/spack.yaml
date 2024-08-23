@@ -1,0 +1,6 @@
+spack:
+  specs:
+  - py-windmapper
+  - py-mesher
+  - py-pychm
+  - chm
