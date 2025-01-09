@@ -1,3 +1,14 @@
+# Trail Valley Creek
+
+Lidar and met data from Philip Marsh. Reproduced with permission
+
+Met data:
+
+Tutton, Rosamond; Dakin, Brampton; Essery, Richard; Griffith, Jory; Hould-Gosselin, Gabriel; Marsh, Philip; Sonnentag, Oliver; Thorne, Robin; Walker, Branden, 2024, "A hydrometeorological dataset from the taiga-tundra ecotone in the western Canadian Arctic: Trail Valley Creek, Northwest Territories (1991-2023)", https://doi.org/10.5683/SP3/BXV4DE
+
+Lidar data:
+https://tc.copernicus.org/articles/13/3045/2019/
+
 # Spack env
 Load the anon space env with 
 
@@ -61,3 +72,7 @@ then run chm
 ```
 $ CHM -f tvc_config.json
 ```
+
+### analysis
+
+Using the jupyter notebook, convert the CHM output to structured grid (tif file) for analysis
