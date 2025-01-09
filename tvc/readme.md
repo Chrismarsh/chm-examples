@@ -24,8 +24,13 @@ $ spack install
 
 # folders
 
-`data/` contains the DEM, veg, and reference snow
+`data/` contains the DEM, veg, and observed snow depth
+`wind/` contains the code to run windmapper
+`mesher/` contains the code to produce the mesh from the DEM and windmapper outputs
+`chm/` contains the configuration file to run CHM
+`analysis` contains the jupyter notebook to do analysis on the output with python
 
+# Run stesp 
 ## 1 - Windmapper
 `wind` is where windmapper is run from:
 
@@ -57,7 +62,7 @@ The hdf5 mesh loads much faster at runtime, so convert to h5
 partition -m DEM_TVC_Lakes_2x2m_NAD83_UTM8N_TUPSR50DRIFT.mesh -p DEM_TVC_Lakes_2x2m_NAD83_UTM8N_TUPSR50DRIFT.param
 ```
 
-### CHM
+## 3 - CHM
 
 CHM likes paths relative to the running dir so create a symlink to the meshes
 
@@ -73,6 +78,6 @@ then run chm
 $ CHM -f tvc_config.json
 ```
 
-### analysis
+## 4 - Analysis
 
 Using the jupyter notebook, convert the CHM output to structured grid (tif file) for analysis
