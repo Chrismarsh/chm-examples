@@ -1,0 +1,122 @@
+{
+
+  "option": 
+  {
+    "station_N_nearest": 1,
+    "interpolant": "nearest",
+
+    "per_triangle_timeseries": "false",
+    "ui": false,
+    "debug_level": "debug",
+    "prj_name": "tvc",
+
+      "startdate":"20121001T190000",
+      "enddate":"20130501T000000"
+  },
+  "modules": //important these are [ ]
+  [
+    //    //met interp
+    "solar",
+    "fast_shadow",
+    "WindNinja",
+
+    "scale_wind_vert",
+    // "iswr_from_obs",
+    "Burridge_iswr",
+    "iswr",
+    "Liston_monthly_llra_ta",
+    "kunkel_rh",
+    "Thornton_p",
+    "PBSM3D",
+    "fetchr",
+    //met process
+    "Walcek_cloud",
+    "Sicart_ilwr",
+    "Harder_precip_phase",
+    "FSM"
+
+  ],
+  // In case of a cycle depencency, remove dependencies between two modules.
+  // If module A depends on B (A->B), then to remove the depency specify it as
+  // "A":"B" 
+  // will remove the dependency on B from A.
+  "remove_depency": {
+        "Simple_Canopy": "FSM",
+        "Richard_albedo": "FSM",
+        "scale_wind_vert": "FSM",
+        "snow_slide": "FSM",
+        "PBSM3D": "FSM",
+        "WindNinja": "FSM"
+  },
+  "config": {
+    "scale_wind_vert": {
+      "ignore_canopy": true
+    },
+    "PBSM3D": {
+            "nLayer": "10",
+            "smooth_coeff": "255", //6500
+            "rouault_diffusion_coef": "false",
+            "min_sd_trans": "0.1",
+            "enable_veg": "true",
+            "snow_diffusion_const": "0.3",
+            "settling_velocity": "0.5",
+            "do_fixed_settling": "true",
+            "do_sublimation": "true",
+            "use_tanh_fetch": "true",
+      "exp_fetch": "false",
+            "use_R94_lambda": "false",
+            "use_PomLi_probability": "false",
+            "use_subgrid_topo": "false",
+            "use_subgrid_topo_V2": "false",
+            "z0_ustar_coupling": "false",
+            "debug_output": "false"
+    },
+    "solar": {
+      "svf": {
+        "compute": true
+      }
+    },
+    "fast_shadow": {
+      "steps": 10
+    }
+  },
+  "meshes": 
+  {
+    "mesh": "meshes/DEM_TVC_Lakes_2x2m_NAD83_UTM8N_TUPSR50DRIFT_mesh.h5",
+    "parameters":
+    {
+      "file": "meshes/DEM_TVC_Lakes_2x2m_NAD83_UTM8N_TUPSR50DRIFT_param.h5"
+    }
+  },
+  "output": {
+    "mesh": {
+      "base_name": "tvc",
+      // "variables":["swe","t","rh"],
+      "specific_datetime": "20130406T130000",
+      "write_parameters": true
+
+    }
+  },
+  "forcing": {
+
+    "UTC_offset": 8,
+    "siksik": {
+      "file": "siksik_1hr_chm_2012-2013.txt",
+      "latitude": 68.746147,    
+      "longitude": -133.5019397503196,
+      "elevation": 149,
+      "filter": {
+        "scale_wind_speed": {
+          "Z_F": 10,
+          "variable": "u"
+        },
+         "macdonald_undercatch":
+         {
+           "variable":"p"
+         }
+      }
+    }
+   
+
+  }
+}

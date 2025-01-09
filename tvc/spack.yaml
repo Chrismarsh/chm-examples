@@ -1,0 +1,28 @@
+spack:
+  specs:
+    - "py-numpy"
+    - "py-importlib-metadata"
+    - "py-cfgrib"
+    - "eccodes"
+    - 'py-xarray +io +viz +parallel'
+    - "py-netcdf4"
+    - "py-pandas"
+    - "gdal@3.5: +python  +hdf5 +netcdf"
+    - "py-dask"
+    - "py-cftime"
+    - "py-pyproj"
+    - "py-matplotlib"
+    - "py-jupyterlab"
+    - "py-natsort"
+    - "py-rioxarray"
+    - "py-rasterio"
+    - "py-pyvista"
+    - "py-pychm@develop"
+    - "py-mesher"
+    - "py-windmapper"
+    - "windninja"
+    - "chm@1.5:"
+    - "cdo~openmp"
+    - "ncview"
+  view: ./view
+
