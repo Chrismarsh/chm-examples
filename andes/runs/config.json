@@ -1,9 +1,6 @@
 {
   "option": {
-    "station_N_nearest": "4",
-    "interpolant": "idw",
     "per_triangle_timeseries": "false",
-    "ui": "false",
     "debug_level": "debug",
     "prj_name": "Andes"
     // "startdate": "20220903T010000",
@@ -149,10 +146,10 @@
   },
   "output": {
     "output_dir": "output",
-    "mesh": {
+    "ugrid": {
       "base_name": "SC",
       "write_parameters": "false",
-      "frequency":48,
+      "frequency":1,
       // "only_last_n": "48",
       "variables": [
         "swe",
@@ -162,6 +159,8 @@
     }
   },
   "forcing": {
+    "num_stations_to_use": "4",
+    "interpolant": "idw",
     "UTC_offset": "0",
     "use_netcdf": "true",
     "file": "wrf2d_CTRL_Renegado_2017_int64.nc",
