@@ -1,3 +1,4 @@
 */mesher_config
 */__pycache__
 *.aux.xml
+fortress/mesh/__pycache__
