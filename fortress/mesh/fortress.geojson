@@ -1,0 +1,21 @@
+{
+  "type": "FeatureCollection",
+  "name": "line_fortress-fabdem_scaled_centroid_2.625x",
+  "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:ESRI::102008" } },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "FID": 0 },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [ -1275092.605367, 1403614.272575 ],
+          [ -1280654.428266, 1404779.996184 ],
+          [ -1279282.070874, 1411475.260265 ],
+          [ -1273546.770053, 1410295.967589 ],
+          [ -1275092.605367, 1403614.272575 ]
+        ]
+      }
+    }
+  ]
+}
